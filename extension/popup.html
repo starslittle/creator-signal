@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>知创 · 创作者信号</title><link rel="stylesheet" href="style.css"></head>
+<body><header><div class="brand"><span class="logo">知</span><div><b>知创 <span>CREATOR SIGNAL</span></b><p>从公开内容，看见创作的商业线索</p></div></div><span class="badge">B站专版</span></header>
+<main>
+<section id="start"><div class="eyebrow">PUBLIC SIGNALS / 01</div><h1>理解信号，<br>从这位创作者开始。</h1><p class="intro">分析 UP 主公开文字，获得有依据、可解释的商业化信号报告。</p>
+<div class="creator-card" id="creator"><span class="avatar">UP</span><div><strong id="creator-name">正在识别当前主页…</strong><p id="creator-detail">仅支持 B站 UP 主个人空间</p></div></div>
+<div class="modes"><label><input type="radio" name="mode" value="page" checked><span><b>主页公开内容</b><small>简介与已加载的作品标题</small></span></label><label><input type="radio" name="mode" value="selection"><span><b>选中文字</b><small id="selection-hint">在主页选中公开文字</small></span></label></div>
+<div id="selection-confirm" hidden><p id="selection-preview" class="preview"></p><label class="confirm"><input type="checkbox" id="public-confirm">我确认所选内容由本页 UP 主公开发布，且不含评论、私信或他人内容。</label></div>
+<button class="primary" id="analyze" disabled>分析这位 UP 主 <span>↗</span></button><p class="privacy">只读 · 本地计算 · 无需 API Key · 不上传页面内容</p>
+</section>
+<div id="status" role="status" aria-live="polite"></div>
+<section id="result" hidden></section>
+<details id="history"><summary>最近的本地报告 <span id="history-count">0</span></summary><div id="history-items"></div><button class="text-button" id="clear-history">清空报告记录</button></details>
+<footer>让每一个判断，都有迹可循。 <span>RULE ENGINE v1.0</span></footer>
+</main><script type="module" src="app.js"></script></body></html>

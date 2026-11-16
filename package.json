@@ -1,0 +1,19 @@
+{
+  "name": "creator-signal",
+  "version": "1.0.0",
+  "description": "B站创作者公开商业化信号分析 Chrome 插件",
+  "scripts": {
+    "test": "node --test tests/scoring.test.js",
+    "test:e2e": "playwright test",
+    "test:live": "node scripts/live-acceptance.js",
+    "package": "node scripts/package.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.65.1"
+  },
+  "type": "module",
+  "private": true
+}

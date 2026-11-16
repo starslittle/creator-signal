@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "知创 · 创作者信号",
+  "version": "0.1.0",
+  "description": "分析 B站 UP 主主页的公开商业化信号，展示可解释分数与原文依据。",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "分析这位 UP 主"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+Y"
+      },
+      "description": "打开创作者信号分析"
+    }
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzRZIFZRWIzha0H7toR5AfUI+KpPbD0wa+O3pwpLbNu9+hcuFVkoS4JU0emwNt36A98LzOzYLoGnjinDLizPDxDPkYmgSVLvnIO6FNLlsE7gCnuqRUlSibZhafUKSVkViU/7uJBYCjDTE6MyQMzcaLD7seDPZyJ3TOHScYZs6xSKzOVFSmu3WNgE5syo97yCDRQcO0G2ComD9h5vCh2shxerFg+kfmlzgaTj7NoResLdbnB+1cwibB4TWao6h44+WimSc1UW3XEskR8+jAacenlNKqnn5xUkwXP3fhV/Bjjb366F3Jh9IHFnsLVuv/sJplwig92BH3FGYDSR2gg50UwIDAQAB"
+}

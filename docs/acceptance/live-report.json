@@ -1,0 +1,70 @@
+{
+  "capturedAt": "2026-11-16T08:25:14.932Z",
+  "createdAt": "2026-11-16T08:25:14.934Z",
+  "creator": {
+    "name": "老师好我叫何同学",
+    "platform": "哔哩哔哩",
+    "uid": "163637592",
+    "url": "https://space.bilibili.com/163637592"
+  },
+  "id": "88eff032-fbe7-4338-9f72-7dd078d50446",
+  "level": "部分公开信号",
+  "limitation": "分数是本次可见样本的规则命中总分，不是收入、商业能力、真实合作意愿或接受合作的概率。未命中不代表未商业化；未展开、未加载、视频画面及私信均未分析。",
+  "mode": "page",
+  "ruleVersion": "commercial-v1.0",
+  "rules": [
+    {
+      "description": "出现商务合作、品牌合作、商单或广告招募的明确表述。",
+      "evidence": [
+        {
+          "matched": "合作请联系",
+          "quote": "目标是做有意思的视频｜合作请联系xhaxx1123@163.com｜粉丝想做htxcontact@163.com 请留下vx或者手机号",
+          "type": "主页简介",
+          "url": "https://space.bilibili.com/163637592"
+        }
+      ],
+      "excluded": [],
+      "id": "collaboration",
+      "name": "明确商务合作",
+      "points": 35,
+      "weight": 35
+    },
+    {
+      "description": "明确提及店铺、购买入口、付费课程、咨询或带货。",
+      "evidence": [],
+      "excluded": [],
+      "id": "sales",
+      "name": "自有商品与付费服务",
+      "points": 0,
+      "weight": 30
+    },
+    {
+      "description": "作者公开声明某内容由品牌赞助、冠名或提供商业支持。",
+      "evidence": [],
+      "excluded": [],
+      "id": "sponsor",
+      "name": "内容赞助声明",
+      "points": 0,
+      "weight": 25
+    },
+    {
+      "description": "作者在简介或所选文字中主动引导充电、付费会员或打赏。平台通用“充电”按钮不计分。",
+      "evidence": [],
+      "excluded": [],
+      "id": "membership",
+      "name": "付费支持入口",
+      "points": 0,
+      "weight": 10
+    }
+  ],
+  "sample": {
+    "blocks": 38,
+    "characters": 768,
+    "types": [
+      "主页简介",
+      "主页作品标题"
+    ]
+  },
+  "score": 35,
+  "sourceUrl": "https://space.bilibili.com/163637592"
+}
