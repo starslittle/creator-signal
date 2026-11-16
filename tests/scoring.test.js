@@ -5,7 +5,7 @@ const capture = texts => ({creator:{name:'测试作者',uid:'123',url:'https://s
 test('分数来自四个类别，封顶100且每类只算一次',()=>{const r=analyze(capture(['商务合作请联系。淘宝店已开业。本期由品牌赞助。给我充电。商务合作请联系。']));assert.equal(r.score,100);assert.equal(r.rules.reduce((n,r)=>n+r.points,0),100);assert.equal(RULES.reduce((n,r)=>n+r.weight,0),100);});
 test('否定句不计分',()=>{for(const text of ['不接商单','暂不接受商务合作','没有赞助商','本期无赞助','不用给我充电','不做带货','免费课程，谨防冒充我的店铺']) assert.equal(analyze(capture([text])).score,0,text);});
 test('真实主页的合作联系方式计35分',()=>assert.equal(analyze(capture(['目标是做有意思的视频｜合作请联系[公开邮箱]｜粉丝想做[公开邮箱]'])).score,35));
-test('播放量、粉丝数、产品名和平台充电按钮不产生分数',()=>assert.equal(analyze(capture(['100万粉丝 iPhone 体验。充电。2.1万人充电。'])) .score,0));
+test('播放量、粉丝数、产品名和平台充电按钮不产生分数',()=>assert.equal(analyze(capture(['100万粉丝 iPhone 体验。充电。2.1万人充电。商务英语课程。商务舱体验。'])) .score,0));
 test('空样本报错，不给出伪0分',()=>assert.throws(()=>analyze(capture([])),/未读取/));
 test('选文模式仅用选文并保留本次作者身份',()=>{const input=capture(['商务合作']);input.selection='我的淘宝店已经开业啦';const r=analyze(input,'selection');assert.equal(r.score,30);assert.equal(r.creator.uid,'123');assert.equal(r.sample.blocks,1);assert.equal(r.rules[0].points,0);});
 test('空选文、身份缺失均报错',()=>{assert.throws(()=>analyze(capture(['商务合作']),'selection'),/至少/);assert.throws(()=>analyze({creator:{},blocks:[]}),/身份/);});
