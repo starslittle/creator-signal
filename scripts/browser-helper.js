@@ -30,7 +30,7 @@ export async function launch() {
       async evaluate(expression){const r=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw new Error(r.exceptionDetails.exception?.description || r.exceptionDetails.text);return r.result?.value;},
       async click(selector){return this.evaluate(`document.querySelector(${JSON.stringify(selector)}).click()`);},
       async waitFor(expression){for(let i=0;i<100;i++){if(await this.evaluate(`(()=>{try{return (${expression});}catch{return false;}})()`))return;await new Promise(r=>setTimeout(r,100));}throw new Error('Timed out waiting for '+expression+'; '+await this.evaluate('document.body.innerText'));},
-      async screenshot(path){const {data}=await send('Page.captureScreenshot',{captureBeyondViewport:true});await writeFile(path,Buffer.from(data,'base64'));},
+      async screenshot(path){const {data}=await send('Page.captureScreenshot',{captureBeyondViewport:false});await writeFile(path,Buffer.from(data,'base64'));},
       async close(){cdp.off('Target.receivedMessageFromTarget',listener);await cdp.send('Target.closeTarget',{targetId:popupTarget.targetId});}
     };
     return popup;

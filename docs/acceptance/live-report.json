@@ -1,13 +1,13 @@
 {
-  "capturedAt": "2026-11-16T08:25:14.932Z",
-  "createdAt": "2026-11-16T08:25:14.934Z",
+  "capturedAt": "2026-11-16T08:26:37.715Z",
+  "createdAt": "2026-11-16T08:26:37.716Z",
   "creator": {
     "name": "老师好我叫何同学",
     "platform": "哔哩哔哩",
     "uid": "163637592",
     "url": "https://space.bilibili.com/163637592"
   },
-  "id": "88eff032-fbe7-4338-9f72-7dd078d50446",
+  "id": "4c94e342-cfb6-43c8-a9f0-a83c010e50ec",
   "level": "部分公开信号",
   "limitation": "分数是本次可见样本的规则命中总分，不是收入、商业能力、真实合作意愿或接受合作的概率。未命中不代表未商业化；未展开、未加载、视频画面及私信均未分析。",
   "mode": "page",
@@ -58,8 +58,8 @@
     }
   ],
   "sample": {
-    "blocks": 38,
-    "characters": 768,
+    "blocks": 39,
+    "characters": 825,
     "types": [
       "主页简介",
       "主页作品标题"

@@ -13,7 +13,6 @@ try {
   await page.waitForTimeout(5000);
   console.log('Live profile loaded');
   await page.screenshot({timeout:15000,path:'docs/acceptance/01-live-profile.png'});
-  console.log('Video title markup:',await page.locator('a[href*="/video/"]').evaluateAll(es=>es.filter(e=>e.innerText.includes('【')).slice(0,2).map(e=>e.parentElement.outerHTML.slice(0,800))));
   const popup=await openPopup(page);
   await popup.waitFor('!document.querySelector("#analyze").disabled');
   await popup.screenshot('docs/acceptance/02-plugin-start.png');
