@@ -25,7 +25,7 @@ export function extractCreator() {
   const add = (el, type, link) => {
     if (!visible(el)) return;
     const text = clean(el.innerText || el.getAttribute('title'));
-    if (text.length < 2 || blocks.some(b => b.text === text)) return;
+    if (text.length < 2 || blocks.some(b => b.text === text && b.type === type && b.url === (link || creator.url))) return;
     blocks.push({ type, text: text.slice(0, 3000), url: link || creator.url });
   };
   // Only profile-owned regions. Never scan body text, recommendations or comments.
@@ -45,7 +45,15 @@ export function extractCreator() {
   const elementFor = node => node?.nodeType === 1 ? node : node?.parentElement;
   const inComments = elementFor(selection?.anchorNode)?.closest(excludedSelector) || elementFor(selection?.focusNode)?.closest(excludedSelector) ||
     (selected && selection.rangeCount && [...document.querySelectorAll(excludedSelector)].some(el => selection.getRangeAt(0).intersectsNode(el)));
-  return { creator, blocks: blocks.slice(0, 50), selection: inComments ? '' : selected.slice(0, 12000), capturedAt: new Date().toISOString(), pageUrl: location.href };
+  let selectionSource = null;
+  if (selected && !inComments && selection.rangeCount) {
+    const range = selection.getRangeAt(0);
+    const container = elementFor(range.commonAncestorContainer);
+    const title = container?.closest('.bili-video-card__title, .bili-video-card__info--tit, .small-item .title, .video-card .title');
+    const anchor = container?.closest('a') || title?.querySelector('a');
+    if (anchor && /^https:\/\/www\.bilibili\.com\/video\//.test(anchor.href) && anchor.contains(selection.anchorNode) && anchor.contains(selection.focusNode)) selectionSource = {url: anchor.href.split('?')[0]};
+  }
+  return { creator, blocks: blocks.slice(0, 50), selectionSource, selection: inComments ? '' : selected.slice(0, 12000), capturedAt: new Date().toISOString(), pageUrl: location.href };
   } catch (error) {
     return { error: error.message || '读取页面失败' };
   }

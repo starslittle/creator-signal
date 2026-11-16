@@ -1,70 +1,75 @@
 {
-  "capturedAt": "2026-11-16T08:26:37.715Z",
-  "createdAt": "2026-11-16T08:26:37.716Z",
+  "assessment": {
+    "code": "E1",
+    "description": "作者提供合作联系方式，但尚未明确合作的商业性质。普通邮箱不算合作线索。",
+    "label": "发现合作联系线索",
+    "level": 1
+  },
+  "capturedAt": "2026-11-16T08:54:43.096Z",
+  "channels": [],
+  "cooperation": {
+    "code": "clue",
+    "evidence": [
+      {
+        "capturedAt": "2026-11-16T08:54:43.096Z",
+        "contentId": null,
+        "creatorUid": "163637592",
+        "historical": false,
+        "kind": "clue",
+        "level": 1,
+        "matched": "合作请联系",
+        "publishedAt": null,
+        "quote": "合作请联系xhaxx1123@163.com",
+        "reason": "有泛合作联系线索，不能直接推断商务意愿。",
+        "type": "主页简介",
+        "url": "https://space.bilibili.com/163637592"
+      }
+    ],
+    "label": "有联系线索，商务性质未明",
+    "scope": "仅判断主页简介中的表述"
+  },
+  "createdAt": "2026-11-16T08:54:43.098Z",
   "creator": {
     "name": "老师好我叫何同学",
     "platform": "哔哩哔哩",
     "uid": "163637592",
     "url": "https://space.bilibili.com/163637592"
   },
-  "id": "4c94e342-cfb6-43c8-a9f0-a83c010e50ec",
-  "level": "部分公开信号",
-  "limitation": "分数是本次可见样本的规则命中总分，不是收入、商业能力、真实合作意愿或接受合作的概率。未命中不代表未商业化；未展开、未加载、视频画面及私信均未分析。",
-  "mode": "page",
-  "ruleVersion": "commercial-v1.0",
-  "rules": [
+  "disclosureRate": {
+    "reason": "尚未完整采集视频简介及相关声明；标题和单段选文不能作为披露率的分母。",
+    "value": null
+  },
+  "evidence": [
     {
-      "description": "出现商务合作、品牌合作、商单或广告招募的明确表述。",
-      "evidence": [
-        {
-          "matched": "合作请联系",
-          "quote": "目标是做有意思的视频｜合作请联系xhaxx1123@163.com｜粉丝想做htxcontact@163.com 请留下vx或者手机号",
-          "type": "主页简介",
-          "url": "https://space.bilibili.com/163637592"
-        }
-      ],
-      "excluded": [],
-      "id": "collaboration",
-      "name": "明确商务合作",
-      "points": 35,
-      "weight": 35
-    },
-    {
-      "description": "明确提及店铺、购买入口、付费课程、咨询或带货。",
-      "evidence": [],
-      "excluded": [],
-      "id": "sales",
-      "name": "自有商品与付费服务",
-      "points": 0,
-      "weight": 30
-    },
-    {
-      "description": "作者公开声明某内容由品牌赞助、冠名或提供商业支持。",
-      "evidence": [],
-      "excluded": [],
-      "id": "sponsor",
-      "name": "内容赞助声明",
-      "points": 0,
-      "weight": 25
-    },
-    {
-      "description": "作者在简介或所选文字中主动引导充电、付费会员或打赏。平台通用“充电”按钮不计分。",
-      "evidence": [],
-      "excluded": [],
-      "id": "membership",
-      "name": "付费支持入口",
-      "points": 0,
-      "weight": 10
+      "capturedAt": "2026-11-16T08:54:43.096Z",
+      "contentId": null,
+      "creatorUid": "163637592",
+      "historical": false,
+      "kind": "clue",
+      "level": 1,
+      "matched": "合作请联系",
+      "publishedAt": null,
+      "quote": "合作请联系xhaxx1123@163.com",
+      "reason": "只有泛合作联系表述，商业性质尚不明确。",
+      "type": "主页简介",
+      "url": "https://space.bilibili.com/163637592"
     }
   ],
+  "excluded": [],
+  "id": "142a47bc-b35c-46f4-9b6c-b00d5fd080bc",
+  "limitation": "本项目自定义证据等级，取本次有效证据可支持的最高档，不加权、不累加。不是 B站官方评分，不代表商业化程度、收入、合作概率或投放价值。未观察到不等于不存在；历史披露不代表当前接受合作。",
+  "mode": "page",
+  "ruleVersion": "evidence-v2.0",
   "sample": {
-    "blocks": 39,
-    "characters": 825,
+    "blocks": 40,
+    "characters": 809,
+    "completeWorks": 0,
+    "linkedWorks": 37,
     "types": [
       "主页简介",
       "主页作品标题"
     ]
   },
-  "score": 35,
+  "schemaVersion": 2,
   "sourceUrl": "https://space.bilibili.com/163637592"
 }

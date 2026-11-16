@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "知创 · 创作者信号",
-  "version": "0.1.0",
-  "description": "分析 B站 UP 主主页的公开商业化信号，展示可解释分数与原文依据。",
+  "version": "0.2.0",
+  "description": "分析 B站 UP 主的品牌合作公开证据等级、合作状态和变现渠道，逐条展示原文依据。",
   "permissions": [
     "activeTab",
     "scripting",

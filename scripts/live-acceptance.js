@@ -21,15 +21,17 @@ try {
   const [report]=await popup.evaluate('chrome.storage.local.get("reports").then(x=>x.reports)');
   assert.equal(report.creator.uid,'163637592');
   assert.equal(report.creator.name,'老师好我叫何同学');
-  assert.ok(report.rules[0].evidence.some(e=>e.matched==='合作请联系'));
-  assert.equal(report.score,35);
+  assert.ok(report.evidence.some(e=>e.matched==='合作请联系'));
+  assert.equal(report.assessment.code,'E1');
+  assert.equal(report.cooperation.code,'clue');
+  assert.equal(report.disclosureRate.value,null);
   await popup.screenshot('docs/acceptance/03-plugin-result.png');
   await writeFile('docs/acceptance/live-report.json',JSON.stringify(report,null,2)+'\n');
   // Open persisted report through the UI and inspect the actual result tab.
   const tabPromise=context.waitForEvent('page');await popup.click('#open-report');const full=await tabPromise;
   await full.waitForURL(`chrome-extension://${id}/popup.html?report=*`);
   await full.locator('#result:not([hidden])').waitFor();
-  assert.match(await full.locator('#result').innerText(),/35/);
+  assert.match(await full.locator('#result').innerText(),/E1/);
   await full.screenshot({path:'docs/acceptance/04-full-report.png',fullPage:true,timeout:15000});
-  console.log(JSON.stringify({creator:report.creator,score:report.score,sample:report.sample,ruleVersion:report.ruleVersion,analyzedAt:report.createdAt,flow:'真实B站页面 → 工具栏插件 → 点击分析 → 报告 → 大屏查看：通过'},null,2));
+  console.log(JSON.stringify({creator:report.creator,assessment:report.assessment,cooperation:report.cooperation.code,sample:report.sample,ruleVersion:report.ruleVersion,analyzedAt:report.createdAt,flow:'真实B站页面 → 工具栏插件 → 点击分析 → 报告 → 完整报告：通过'},null,2));
 } finally {await context.close();}
